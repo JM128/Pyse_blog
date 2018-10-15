@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	<h3>{{post.title}}hello</h3>
+	<div id = "post-content">
+		{{post.text}}hello
+	</div>
+{% endblock %}
+
+{%  block js%}
+	<script>
+		document.getElementById('post-content').innerHTML = marked($('#post-content').text());
+		$('table').addClass('table table-striped')
+	</script>
+{% endblock %}
